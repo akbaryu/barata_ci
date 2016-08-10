@@ -1,0 +1,11 @@
+Admin_______
+user: admin
+pass: 123
+
+Operator______
+user: operator
+pass: 123
+
+User________
+user: user
+pass: 123

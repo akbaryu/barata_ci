@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>403 Forbidden</title>
+</head>
+<body>
+
+<p>Directory access is forbidden.</p>
+
+</body>
+</html>
+
+$id_ikm = $_POST['id_ikm'];
+        $badan_usaha = $_POST['badan_usaha'];
+        $nama_perusahaan = $_POST['nama_perusahaan'];
+        $nama_pemilik = $_POST['nama_pemilik'];
+        $alamat = $_POST['alamat'];
+        $kecamatan = $_POST['kecamatan'];
+        $desa_kelurahan = $_POST['desa_kelurahan'];
+        $telepon = $_POST['telepon'];
+        $fax = $_POST['fax'];
+        $email = $_POST['email'];
+        $website = $_POST['website'];
+        $ijin_ui = $_POST['ijin_ui'];
+        $tahun_ijin_ui = $_POST['tahun_ijin_ui'];
+        $kbli_kode = $_POST['kbli_kode'];
+        $nama_produk = $_POST['nama_produk'];
+        $jenis_produk = $_POST['jenis_produk'];
+        $tahun_data = $_POST['tahun_data'];
+        $tk_laki = $_POST['tk_laki'];
+        $tk_perempuan = $_POST['tk_perempuan'];
+        $nilai_investasi = $_POST['nilai_investasi'];
+        $kapasitas_produksi = $_POST['kapasitas_produksi'];
+        $satuan = $_POST['satuan'];
+        $nilai_produksi = $_POST['nilai_produksi'];
+        $nilai_bb = $_POST['nilai_bb'];
+        $pemasaran_ekspor = $_POST['pemasaran_ekspor'];
+        $negara_ekspor = $_POST['negara_ekspor'];
+
+        $where = array('id_ikm' => $id_ikm);
+        $data_update = array(
+            'id_ikm' => $id_ikm,
+            'badan_usaha' => $badan_usaha,
+            'nama_perusahaan' => $nama_perusahaan,
+            'alamat' => $alamat,
+            'kecamatan' => $kecamatan,
+            'desa_kelurahan'=>$desa_kelurahan,
+            'telepon' => $telepon,
+            'fax' => $fax,
+            'email' => $email,
+            'website' => $website,
+            'ijin_ui' => $ijin_ui,
+            'tahun_ijin_ui' => $tahun_ijin_ui,
+            'kbli_kode' => $kbli_kode,
+            'nama_produk' => $nama_produk,
+            'jenis_produk' => $jenis_produk,
+            'tahun_data' => $tahun_data,
+            'tk_laki' => $tk_laki,
+            'tk_perempuan' => $tk_perempuan,
+            'nilai_investasi' => $nilai_investasi,
+            'kapasitas_produksi' => $kapasitas_produksi,
+            'satuan' => $satuan,
+            'nilai_produksi' => $nilai_produksi,
+            'nilai_bb' => $nilai_bb,
+            'pemasaran_ekspor' => $pemasaran_ekspor,
+            'negara_ekspor' => $negara_ekspor,
+            'status' => $status);
+        $res = $this->modelmy->UpdateData('operator',$data_update,$where);
+        if ($res >= 1){
+            $this->session->set_flashdata('pesan','Update data sukses');
+            redirect('crudoperator/index');
+        }
